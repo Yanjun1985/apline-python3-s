@@ -16,14 +16,6 @@ RUN python -m pip install --upgrade pip \
     && pip install pyLDAvis \
     && pip install xlrd \
     && pip install pymysql \
-    && pip install datetime \
-    && pip install os \
-    && pip install sys \
-    && pip logging \
-    && pip json \
-    && pip libs \
-    && pip pandas \
-    && pip gensiom
-
+    && pip pandas 
 EXPOSE 19000
 CMD ["python"]
