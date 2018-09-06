@@ -17,7 +17,7 @@ RUN python -m pip install --upgrade pip \
     && pip install pyLDAvis \
     && pip install xlrd \
     && pip install pymysql \
-    && pip pandas  \
+    && pip install pandas  \
     && apk del .fetch-dep
 EXPOSE 19000
 CMD ["python"]
