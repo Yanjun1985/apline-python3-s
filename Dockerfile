@@ -7,8 +7,9 @@ RUN apk add --no-cache python3  && \
     pip3 install --upgrade pip setuptools && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
-    rm -r /root/.cache
-RUN python -m pip install --upgrade pip \
+    rm -r /root/.cache \
+    \
+    && python -m pip install --upgrade pip \
     && pip install Django==2.0.5 \
     && pip install Cython \
     && pip install jieba \
