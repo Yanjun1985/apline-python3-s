@@ -1,7 +1,7 @@
 FROM alpine:3.8
 
 RUN apk add --no-cache python3  && \
-    apk add --no-cache --virtual=.fetch-dep python3-dev build-base openblas-dev && \
+    apk add --no-cache --virtual=.fetch-dep python3-dev build-base openblas-dev libffi-dev libressl-dev && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     pip3 install --upgrade pip setuptools && \
