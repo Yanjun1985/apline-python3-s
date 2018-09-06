@@ -1,6 +1,7 @@
 FROM alpine:3.8
 
-RUN apk add --no-cache python3 python3-dev build-base && \
+RUN apk add --no-cache python3  && \
+    apk add --no-cache --virtual=.fetch-dep python3-dev build-base openblas-dev && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     pip3 install --upgrade pip setuptools && \
@@ -16,6 +17,7 @@ RUN python -m pip install --upgrade pip \
     && pip install pyLDAvis \
     && pip install xlrd \
     && pip install pymysql \
-    && pip pandas 
+    && pip pandas  \
+    && apk del .fetch-dep
 EXPOSE 19000
 CMD ["python"]
