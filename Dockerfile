@@ -20,6 +20,9 @@ RUN apk add --no-cache python3  && \
     && pip install xlrd \
     && pip install pymysql \
     && pip install pandas  \
-    && apk del .build-dep
-EXPOSE 19000
-CMD ["python"]
+    && apk del .build-dep 
+    
+EXPOSE 8080-8089
+
+ENTRYPOINT tail -f /dev/null
+CMD ["/bin/bash"]
