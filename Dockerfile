@@ -20,7 +20,7 @@ RUN apk add --no-cache python3  && \
     && pip install xlrd \
     && pip install pymysql \
     && pip install pandas  \
-    && pip install sqlalchemy \
+    && pip install SQLAlchemy \
     && apk del .build-dep 
     
 EXPOSE 8080-8089
